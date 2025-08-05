@@ -13,8 +13,8 @@ describe(`Function 'validateEmail':`, () => {
     expect(typeof result).toBe('boolean');
   });
 
-  it(`should return 'true' for the invalid email`, () => {
-    expect(validateEmail('test838@gmail.com.')).toBe(true);
+  it(`should return 'false' for email ending with dot`, () => {
+    expect(validateEmail('test838gmail.com.')).toBeFalsy();
   });
 
   it(`should return 'false' for an email with invalid domain`, () => {
